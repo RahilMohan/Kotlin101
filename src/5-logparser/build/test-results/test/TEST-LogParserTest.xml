@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LogParserTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-05-13T06:12:22.443Z" hostname="ip-192-168-0-145.ap-southeast-1.compute.internal" time="0.107">
+  <properties/>
+  <testcase name="testFlowParsing" classname="LogParserTest" time="0.099"/>
+  <testcase name="testChannelAggregation" classname="LogParserTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
