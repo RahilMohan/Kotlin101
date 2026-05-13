@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="InventoryManagerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-05-13T06:03:30.732Z" hostname="ip-192-168-0-145.ap-southeast-1.compute.internal" time="0.026">
+  <properties/>
+  <testcase name="testAddItem" classname="InventoryManagerTest" time="0.009"/>
+  <testcase name="testUpdateWithCopy" classname="InventoryManagerTest" time="0.002"/>
+  <testcase name="testNullSafeSearch" classname="InventoryManagerTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
