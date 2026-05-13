@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="HealthManagerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-05-13T06:21:10.698Z" hostname="ip-192-168-0-145.ap-southeast-1.compute.internal" time="0.114">
+  <properties/>
+  <testcase name="testTrackingLifecycle" classname="HealthManagerTest" time="0.107"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
