@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TileLayoutFactoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-05-13T06:22:35.217Z" hostname="ip-192-168-0-145.ap-southeast-1.compute.internal" time="0.036">
+  <properties/>
+  <testcase name="testWorkoutTileLayout" classname="TileLayoutFactoryTest" time="0.031"/>
+  <testcase name="testDslBuilder" classname="TileLayoutFactoryTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
