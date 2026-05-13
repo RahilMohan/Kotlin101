@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="SyncManagerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-05-13T06:24:57.966Z" hostname="ip-192-168-0-145.ap-southeast-1.compute.internal" time="0.067">
+  <properties/>
+  <testcase name="testBinaryRoundTrip" classname="SyncManagerTest" time="0.054"/>
+  <testcase name="testDiffingLogic" classname="SyncManagerTest" time="0.004"/>
+  <testcase name="testApplyUpdate" classname="SyncManagerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
