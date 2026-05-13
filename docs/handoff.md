@@ -1,29 +1,28 @@
 ## Task
-Project 0: Pro Environment Setup
+Project 1: Mordant RPN Calculator
 
 ## Current status
 DONE
 
 ## What changed
-- `src/0-environment/sdk_check.sh`: New automated verification script.
-- `src/0-environment/debugger_shortcuts.md`: New guide for AS debugger and Wear OS pairing.
-- `docs/setup_guide.md`: New persistent manual setup instructions.
-- `docs/decision_log.md`: Standardized on JDK 25 / Kotlin 2.3.
-- `src/1-calculator/`: Initial project scaffold with Gradle.
-- `.gitignore`: Configured for Kotlin/Android.
+- `src/1-calculator/src/main/kotlin/RpnCalculator.kt`: Core logic with stack recovery.
+- `src/1-calculator/src/test/kotlin/RpnCalculatorTest.kt`: Unit tests for math logic.
+- `src/1-calculator/src/main/kotlin/Main.kt`: Interactive TUI loop with Mordant tables.
+- `src/1-calculator/build.gradle.kts`: Added Mordant dependency.
 
 ## Decisions made
-- Standardized on **JDK 25** and **Kotlin 2.3** to leverage K2 compiler and latest stability.
-- Mandated **Android SDK 34** and **Wear OS 4 (API 33)** for wearable proficiency.
+- Used **ArrayDeque** for the stack to learn about mutable Kotlin collections.
+- Used **Mordant** instead of Mosaic to keep the focus on pure Kotlin fundamentals while maintaining a 'Charm Bracelet' aesthetic.
+- Implemented **Stack Recovery** (restoring numbers on error) to demonstrate robust logic design.
 
 ## Open questions
 - None.
 
 ## Risks
-- Ensure the user manually enables **K2 Mode** in Android Studio as it cannot be automated via script.
+- None.
 
 ## Next recommended step
-**Project 1: Smart Terminal Calculator.** Focus on core Kotlin syntax (variables, null safety, and control flow).
+**Project 2: Inventory CLI.** Focus on **Data Classes** and **Advanced Null Safety** (Moving beyond simple `toDoubleOrNull`).
 
 ## Files to inspect next
-- `src/1-calculator/src/main/kotlin/Main.kt`
+- `src/1-calculator/src/main/kotlin/RpnCalculator.kt`

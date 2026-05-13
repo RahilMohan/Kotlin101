@@ -1,20 +1,19 @@
 # Current State
 
 ## Milestone
-**Project 0 Complete: Pro Environment Ready**
+**Project 1 Complete: Mordant RPN Calculator**
 
 ## Capabilities
-- **Verified Toolchain:** JDK 25, Kotlin 2.3, Gradle 9.5, ADB 1.0.41.
-- **Automated Verification:** `src/0-environment/sdk_check.sh` provides one-click environment validation.
-- **Pro Debugger Config:** `src/0-environment/debugger_shortcuts.md` documents essential shortcuts and Wear OS wireless debugging.
-- **Initial Scaffold:** `src/1-calculator` is a functional Gradle Kotlin JVM project.
-- **Repository Hygiene:** `.gitignore` configured to prevent build artifact drift.
+- **RPN Engine:** Robust calculation logic using `ArrayDeque` with stack recovery on error.
+- **TUI Interface:** Professional terminal UI using `Mordant` with styled tables and color-coded feedback.
+- **Interactive REPL:** A continuous loop handling numbers, operators (`+`, `-`, `*`, `/`), and commands (`clear`, `quit`).
+- **Verified Toolchain:** Project 1 verified with unit tests and successful Gradle builds.
 
 ## Runtime Stack
 - Kotlin 2.3.21
-- Android Studio Ladybug+
-- JDK 25
+- Mordant 2.7.2
 - Gradle 9.5
+- JDK 25
 
 ## Known Gaps
-- None for the environment. Ready for pure Kotlin development.
+- None for Project 1.

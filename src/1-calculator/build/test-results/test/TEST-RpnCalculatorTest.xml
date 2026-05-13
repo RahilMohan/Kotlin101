@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="RpnCalculatorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-05-13T05:54:20.484Z" hostname="ip-192-168-0-145.ap-southeast-1.compute.internal" time="0.026">
+  <properties/>
+  <testcase name="testEmptyStack" classname="RpnCalculatorTest" time="0.015"/>
+  <testcase name="testBasicAddition" classname="RpnCalculatorTest" time="0.001"/>
+  <testcase name="testDivisionByZero" classname="RpnCalculatorTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
