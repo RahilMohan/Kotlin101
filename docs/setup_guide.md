@@ -1,41 +1,31 @@
-# Environment Setup Guide
+# Setup Guide: Kotlin & Wear OS Mastery
 
-This guide outlines the manual steps required to prepare the development environment for the Kotlin & Wear OS Mastery curriculum.
+## 1. Automated Environment Check
+Run the verification script to ensure your core toolchain is ready:
+```bash
+./src/0-environment/sdk_check.sh
+```
 
-## 1. JDK and Kotlin
-Ensure you have the following versions installed:
-- **JDK:** 25+ (Exceeds the JDK 17 minimum requirement)
-- **Kotlin:** 2.3+
-
-## 2. Android Studio Configuration
-We recommend using **Android Studio Ladybug** or newer.
+## 2. Manual Android Studio Configuration
+The following steps must be performed manually in Android Studio Ladybug+:
 
 ### Enable Kotlin K2 Compiler
-For optimal performance and to align with our codebase standards:
-1. Open Android Studio **Settings** (or **Preferences** on macOS).
-2. Navigate to **Languages & Frameworks** > **Kotlin**.
-3. Enable the **K2 Mode** checkbox.
-4. Restart Android Studio if prompted.
+- Go to `Settings` (or `Android Studio > Settings` on macOS).
+- Navigate to `Languages & Frameworks > Kotlin`.
+- Check the box for **Enable K2 Kotlin Mode**.
+- Restart Android Studio if prompted.
 
-## 3. SDK Manager Installations
-Open the Android Studio **SDK Manager** and ensure the following are installed:
+### SDK Manager Installations
+- Open the **SDK Manager** (Settings > Appearance & Behavior > System Settings > Android SDK).
+- **SDK Platforms:**
+    - Ensure `Android 14.0 ("UpsideDownCake")` (API 34) is installed.
+    - Ensure `Android 13.0 ("Tiramisu")` (API 33) is installed (required for Wear OS 4).
+- **SDK Tools:**
+    - Ensure `Android SDK Build-Tools 34` or higher is installed.
+    - Ensure `Android SDK Command-line Tools (latest)` is installed.
 
-### SDK Platforms
-- **Android 14.0 ("UpsideDownCake")** (API Level 34)
-- **Android 13.0 ("Tiramisu")** (API Level 33) - required for Wear OS 4
-
-### SDK Tools
-- **Android SDK Build-Tools 34+**
-- **Android SDK Platform-Tools**
-- **Android Emulator**
-
-### Wear OS System Images
-- **Wear OS 4** (under Android 13.0 / API 33)
-  - `Wear OS 4 Large Image`
-  - `Wear OS 4 Small Image`
-
-## 4. Verification
-Run the following script to verify your environment:
-```bash
-bash src/0-environment/sdk_check.sh
-```
+## 3. Wear OS Debugging
+- Enable **Developer Options** on your watch (Settings > System > About > Versions > Tap 'Build number' 7 times).
+- Go to `Settings > Developer options`.
+- Enable **ADB Debugging** and **Debug over Wi-Fi**.
+- Use ADB to connect: `adb connect <watch_ip>:5555`.
