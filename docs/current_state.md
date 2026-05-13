@@ -1,22 +1,20 @@
 # Current State
 
 ## Milestone
-**Bootstrap Phase: Environment Configured**
+**Project 0 Complete: Pro Environment Ready**
 
 ## Capabilities
-- Repository structure initialized according to `harness.md`.
-- 15-project curriculum designed and approved.
-- Documentation structure in place.
-- Environment verification script `sdk_check.sh` implemented and passing.
-- JDK 25 and Kotlin 2.3 confirmed as baseline.
-- Debugger shortcuts and AI Agent integration (Gemini) documented.
-- ADB over Wi-Fi for Wear OS connection steps documented.
+- **Verified Toolchain:** JDK 25, Kotlin 2.3, Gradle 9.5, ADB 1.0.41.
+- **Automated Verification:** `src/0-environment/sdk_check.sh` provides one-click environment validation.
+- **Pro Debugger Config:** `src/0-environment/debugger_shortcuts.md` documents essential shortcuts and Wear OS wireless debugging.
+- **Initial Scaffold:** `src/1-calculator` is a functional Gradle Kotlin JVM project.
+- **Repository Hygiene:** `.gitignore` configured to prevent build artifact drift.
 
 ## Runtime Stack
-- Kotlin 2.3+
+- Kotlin 2.3.21
 - Android Studio Ladybug+
-- JDK 25 (Exceeds JDK 17 requirement)
-- Gradle (Version Catalog based)
+- JDK 25
+- Gradle 9.5
 
 ## Known Gaps
-- Android Studio K2 compiler needs manual enablement by developer.
+- None for the environment. Ready for pure Kotlin development.
