@@ -9,6 +9,8 @@
 - Documentation structure in place.
 - Environment verification script `sdk_check.sh` implemented and passing.
 - JDK 25 and Kotlin 2.3 confirmed as baseline.
+- Debugger shortcuts and AI Agent integration (Gemini) documented.
+- ADB over Wi-Fi for Wear OS connection steps documented.
 
 ## Runtime Stack
 - Kotlin 2.3+
@@ -18,4 +20,3 @@
 
 ## Known Gaps
 - Android Studio K2 compiler needs manual enablement by developer.
-- ADB bridge to Wear OS target needs verification (Task 2).
