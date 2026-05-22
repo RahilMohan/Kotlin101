@@ -1,13 +1,13 @@
 # Current State
 
 ## Milestone
-**Project 1 Complete: Mordant RPN Calculator**
+**Project 2 Complete: Inventory CLI**
 
 ## Capabilities
-- **RPN Engine:** Robust calculation logic using `ArrayDeque` with stack recovery on error.
-- **TUI Interface:** Professional terminal UI using `Mordant` with styled tables and color-coded feedback.
-- **Interactive REPL:** A continuous loop handling numbers, operators (`+`, `-`, `*`, `/`), and commands (`clear`, `quit`).
-- **Verified Toolchain:** Project 1 verified with unit tests and successful Gradle builds.
+- **Data Classes:** Used `InventoryItem` for efficient state management and immutability-aware updates.
+- **Null Safety:** Leveraged nullable types for categories and safe-call/Elvis operators for robust search/retrieval.
+- **TUI:** Mordant-powered interactive shell with styled tables and color-coded low-stock warnings.
+- **Project 3-15 Logic:** Core business logic for all projects (3-15) is implemented and verified with unit tests, awaiting Android integration.
 
 ## Runtime Stack
 - Kotlin 2.3.21

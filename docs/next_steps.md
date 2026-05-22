@@ -1,10 +1,8 @@
 # Next Steps
 
-1. [ ] **Project 0: Pro Environment Setup**
-   - Configure Android Studio for high performance.
-   - Set up Kotlin K2 compiler and Lint rules.
-   - [x] Integrate AI Coding Agent (Gemini/Copilot).
-   - [x] Verify ADB connection to Wear OS Emulator/Device (documented).
-
-2. [ ] **Project 1: Smart Terminal Calculator**
-   - Core Kotlin syntax mastery.
+1. [x] **Project 0: Pro Environment Setup**
+2. [x] **Project 1: Smart Terminal Calculator**
+3. [x] **Project 2: Inventory CLI**
+4. [ ] **Project 3: Schema Generator Integration**
+   - Formalize the reflection-based JSON Schema generator.
+   - [ ] Build interactive CLI to test schemas on user-provided classes.
