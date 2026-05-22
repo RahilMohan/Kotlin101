@@ -1,0 +1,26 @@
+{
+  "id": "inventory-cli_20260522",
+  "title": "Project 2: Inventory CLI",
+  "type": "feature",
+  "status": "in-progress",
+  "priority": "medium",
+  "created": "2026-05-22T10:00:00Z",
+  "updated": "2026-05-22T10:00:00Z",
+  "started": "2026-05-22T10:00:00Z",
+  "completed": null,
+  "assignee": "@gemini",
+  "phases": {
+    "total": 2,
+    "current": 1,
+    "completed": 0
+  },
+  "tasks": {
+    "total": 8,
+    "completed": 0,
+    "in_progress": 0,
+    "pending": 8
+  },
+  "checkpoints": [],
+  "dependencies": [],
+  "tags": ["kotlin", "data-classes", "null-safety"]
+}
