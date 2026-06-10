@@ -1,29 +1,25 @@
 ## Task
-Systematic verification and completion of Kotlin Mastery projects (11-15).
+Comprehensive documentation review and update of `README.md`.
 
 ## Current status
-DONE (All projects 0-15 verified, completed, and closed in the track tracking system)
+DONE (Updated README to adhere to best practices, detailed the runtime tech stack, and provided a comprehensive curriculum mapping)
 
 ## What changed
-- `docs/superpowers/tracks/`: Initialized verification track folders for Project 11 (Watchface), Project 12 (Health Tracker), Project 13 (Workout Tile), Project 14 (Sync Manager), and Project 15 (Smart Home Complication) with matching `index.md`, `metadata.json`, `plan.md`, and `spec.md` files.
-- `docs/superpowers/tracks.md`: Registered all remaining tracks as completed.
-- `docs/next_steps.md`: Checked off all remaining projects and marked the curriculum as completed.
-- `docs/current_state.md`: Set milestone to Completed and cleared all known gaps.
-- `README.md`: Modernized the getting started instructions.
+- [README.md](file:///Users/baldur10/Documents/Vibe Projects/Kotlin101/README.md): Rewritten to feature comprehensive project matrices, runtime library versions (Kotlin, Coroutines, Compose, Ktor, Serialization, Mordant), guiding principles, and clear setup / running commands.
 
 ## Decisions made
-- Ran standard automated verification for each project using local Unit Tests, verifying calculation offsets, serialization stability, resource allocation, and view-model reactive flow behaviors.
+- Highlighted the interactive `learning-guide.html` files inside each project subdirectory to ensure students utilize them.
+- Structured the curriculum roadmap table to group Phase 1 (CLI), Phase 2 (Compose Mobile), and Phase 3 (Wear OS) logically.
 
 ## Open questions
-- None. All curriculum goals achieved.
+- None.
 
 ## Risks
 - None.
 
 ## Next recommended step
-The curriculum is complete. No further actions are needed.
+- Continue onboarding or exploring specific projects (e.g. Project 11 [Watchface](file:///Users/baldur10/Documents/Vibe Projects/Kotlin101/src/11-watchface) or Project 12 [Health Tracker](file:///Users/baldur10/Documents/Vibe Projects/Kotlin101/src/12-health)).
 
 ## Files to inspect next
-- [next_steps.md](file:///Users/baldur10/Documents/Vibe Projects/Kotlin101/docs/next_steps.md)
+- [README.md](file:///Users/baldur10/Documents/Vibe Projects/Kotlin101/README.md)
 - [current_state.md](file:///Users/baldur10/Documents/Vibe Projects/Kotlin101/docs/current_state.md)
-- [tracks.md](file:///Users/baldur10/Documents/Vibe Projects/Kotlin101/docs/superpowers/tracks.md)
