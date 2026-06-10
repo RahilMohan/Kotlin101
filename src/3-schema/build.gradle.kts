@@ -1,5 +1,8 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     kotlin("jvm") version "2.3.21"
+    application
 }
 
 group = "com.vibe.kotlin101"
@@ -11,9 +14,21 @@ repositories {
 
 dependencies {
     implementation(kotlin("reflect"))
+    implementation("com.github.ajalt.mordant:mordant:2.7.2")
     testImplementation(kotlin("test"))
 }
 
-kotlin {
-    jvmToolchain(25)
+application {
+    mainClass.set("MainKt")
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_21)
+    }
+}
+
+tasks.withType<JavaCompile>().configureEach {
+    targetCompatibility = "21"
+    sourceCompatibility = "21"
 }

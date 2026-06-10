@@ -1,29 +1,40 @@
-import kotlinx.coroutines.*
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class WeatherData(
+    val city: String,
+    val temperature: Double,
+    val condition: String
+)
 
 sealed class WeatherState {
     object Loading : WeatherState()
-    data class Success(val city: String, val temp: Double) : WeatherState()
+    data class Success(val data: WeatherData) : WeatherState()
     data class Error(val message: String) : WeatherState()
 }
 
-class WeatherViewModel(private val ioDispatcher: CoroutineDispatcher = Dispatchers.Default) {
+class WeatherViewModel {
     private val _uiState = MutableStateFlow<WeatherState>(WeatherState.Loading)
-    val uiState = _uiState.asStateFlow()
+    val uiState: StateFlow<WeatherState> = _uiState.asStateFlow()
 
-    fun fetchWeather() {
+    suspend fun fetchWeather(city: String) {
         _uiState.value = WeatherState.Loading
-        
-        // Use a scope provided by the caller or a simple GlobalScope for this simulation
-        // In real Android, we'd use viewModelScope
-        CoroutineScope(ioDispatcher).launch {
-            try {
-                delay(500L) // Simulate network delay
-                _uiState.value = WeatherState.Success("Kotlin City", 22.5)
-            } catch (e: Exception) {
-                _uiState.value = WeatherState.Error("Failed to fetch weather")
+        delay(1500) // Simulate network delay
+
+        try {
+            // Simulated response
+            val data = when (city.lowercase()) {
+                "london" -> WeatherData("London", 15.5, "Cloudy")
+                "tokyo" -> WeatherData("Tokyo", 22.0, "Sunny")
+                else -> throw Exception("City not found")
             }
+            _uiState.value = WeatherState.Success(data)
+        } catch (e: Exception) {
+            _uiState.value = WeatherState.Error(e.message ?: "Unknown Error")
         }
     }
 }

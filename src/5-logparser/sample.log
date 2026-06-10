@@ -1,0 +1,7 @@
+[2026-05-26 10:00:01] INFO: System booting...
+[2026-05-26 10:00:05] INFO: Services started.
+[2026-05-26 10:01:12] WARN: Disk usage at 85%
+[2026-05-26 10:02:45] ERROR: Connection reset by peer
+[2026-05-26 10:03:00] INFO: User 'admin' logged in.
+[2026-05-26 10:04:10] ERROR: NullPointerException in AuthService
+[2026-05-26 10:05:22] INFO: Heartbeat signal received.

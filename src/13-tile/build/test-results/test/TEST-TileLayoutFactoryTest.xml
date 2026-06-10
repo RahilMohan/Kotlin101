@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TileLayoutFactoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-05-13T06:22:35.217Z" hostname="ip-192-168-0-145.ap-southeast-1.compute.internal" time="0.036">
+<testsuite name="TileLayoutFactoryTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-06-10T13:10:31.183Z" hostname="baldur10.local" time="0.028">
   <properties/>
-  <testcase name="testWorkoutTileLayout" classname="TileLayoutFactoryTest" time="0.031"/>
-  <testcase name="testDslBuilder" classname="TileLayoutFactoryTest" time="0.001"/>
+  <testcase name="testLayoutContainsLayoutStructure" classname="TileLayoutFactoryTest" time="0.022"/>
+  <testcase name="testLayoutContainsDescription" classname="TileLayoutFactoryTest" time="0.0"/>
+  <testcase name="testLayoutContent" classname="TileLayoutFactoryTest" time="0.0"/>
+  <testcase name="testSpecialCharactersInMetrics" classname="TileLayoutFactoryTest" time="0.001"/>
+  <testcase name="testLayoutIsConsistent" classname="TileLayoutFactoryTest" time="0.0"/>
+  <testcase name="testEmptyMetrics" classname="TileLayoutFactoryTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

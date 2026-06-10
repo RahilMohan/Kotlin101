@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WeatherViewModelTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-05-13T06:16:00.429Z" hostname="ip-192-168-0-145.ap-southeast-1.compute.internal" time="0.107">
+<testsuite name="WeatherViewModelTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-06-05T13:33:57.910Z" hostname="baldur10.local" time="13.808">
   <properties/>
-  <testcase name="testInitialLoadingState" classname="WeatherViewModelTest" time="0.02"/>
-  <testcase name="testSuccessfulFetch" classname="WeatherViewModelTest" time="0.083"/>
+  <testcase name="testLoadingStateTransitionsToResult" classname="WeatherViewModelTest" time="1.654"/>
+  <testcase name="testFetchThenError" classname="WeatherViewModelTest" time="3.024"/>
+  <testcase name="testWeatherFetchErrorCaseInsensitive" classname="WeatherViewModelTest" time="1.51"/>
+  <testcase name="testWeatherFetchSuccessTokyo" classname="WeatherViewModelTest" time="1.551"/>
+  <testcase name="testInitialStateIsLoading" classname="WeatherViewModelTest" time="0.005"/>
+  <testcase name="testWeatherFetchError" classname="WeatherViewModelTest" time="1.508"/>
+  <testcase name="testMultipleFetches" classname="WeatherViewModelTest" time="3.014"/>
+  <testcase name="testWeatherFetchSuccessLondon" classname="WeatherViewModelTest" time="1.518"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

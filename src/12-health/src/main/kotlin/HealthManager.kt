@@ -1,35 +1,32 @@
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
-import kotlin.random.Random
 
-data class HeartRateState(
-    val bpm: Int = 0,
-    val accuracy: String = "Unknown",
-    val isRunning: Boolean = false
+data class HealthStats(
+    val heartRate: Int,
+    val steps: Int
 )
 
-class HealthManager(private val scope: CoroutineScope) {
-    private val _state = MutableStateFlow(HeartRateState())
-    val state = _state.asStateFlow()
+class HealthManager {
+    private val _stats = MutableStateFlow(HealthStats(70, 0))
+    val stats: StateFlow<HealthStats> = _stats.asStateFlow()
 
-    private var sensorJob: Job? = null
+    private var job: Job? = null
 
-    fun startTracking() {
-        if (_state.value.isRunning) return
-        
-        _state.update { it.copy(isRunning = true, accuracy = "High") }
-        
-        sensorJob = scope.launch {
+    fun startMonitoring() {
+        job?.cancel()
+        job = CoroutineScope(Dispatchers.Default).launch {
             while (isActive) {
-                val nextBpm = Random.nextInt(60, 160)
-                _state.update { it.copy(bpm = nextBpm) }
-                delay(1000) // Emit every second
+                delay(1000)
+                val current = _stats.value
+                val newHr = (current.heartRate + (-2..2).random()).coerceIn(60, 180)
+                val newSteps = current.steps + (0..10).random()
+                _stats.value = HealthStats(newHr, newSteps)
             }
         }
     }
 
-    fun stopTracking() {
-        sensorJob?.cancel()
-        _state.update { it.copy(isRunning = false, bpm = 0, accuracy = "None") }
+    fun stopMonitoring() {
+        job?.cancel()
+        job = null
     }
 }

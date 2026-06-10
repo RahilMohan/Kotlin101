@@ -1,0 +1,26 @@
+{
+  "id": "workout-tile_20260610",
+  "title": "Project 13: Workout Tile",
+  "type": "feature",
+  "status": "completed",
+  "priority": "medium",
+  "created": "2026-06-10T21:10:00Z",
+  "updated": "2026-06-10T21:10:00Z",
+  "started": "2026-06-10T21:10:00Z",
+  "completed": "2026-06-10T21:10:00Z",
+  "assignee": "@gemini",
+  "phases": {
+    "total": 1,
+    "current": 1,
+    "completed": 1
+  },
+  "tasks": {
+    "total": 3,
+    "completed": 3,
+    "in_progress": 0,
+    "pending": 0
+  },
+  "checkpoints": [],
+  "dependencies": [],
+  "tags": ["tiles", "layout-dsl", "wear-os"]
+}

@@ -19,3 +19,6 @@
 - [ ] **Step 4: Implement recursive handling for nested data classes**
 - [ ] **Step 5: Write tests for various data structures**
 - [ ] **Step 6: Commit**
+- [ ] **Step 7: Generate `learning-guide.html`**
+  - Create `src/3-schema/learning-guide.html`
+  - Explain Reflection and Generics with visual diagrams.

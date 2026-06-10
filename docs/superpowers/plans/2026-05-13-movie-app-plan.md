@@ -19,3 +19,8 @@
 - [ ] **Step 2: Implement Data Repository and Mappers**
 - [ ] **Step 3: Write tests verifying layer isolation**
 - [ ] **Step 4: Commit**
+- [ ] **Step 5: Build Compose UI with Navigation**
+  - Implement a list screen and a detail screen.
+  - Use Compose Navigation to switch between them.
+- [ ] **Step 6: Generate `learning-guide.html`**
+  - Explain Clean Architecture layers and Navigation patterns.

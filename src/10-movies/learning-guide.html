@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 10: Movie App - Learning Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-light: #e0e7ff;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --accent: #f43f5e;
+            --code-bg: #1e1e2e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+
+        section {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 24px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: var(--primary-light);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            color: #3730a3;
+        }
+
+        .mermaid {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background: #f1f5f9;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        pre {
+            background: var(--code-bg);
+            color: #d1d5db;
+            padding: 1.5rem;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .outcome-list {
+            list-style: none;
+        }
+
+        .outcome-list li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .outcome-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Movie App</h1>
+            <p class="subtitle">Project 10: Clean Architecture and Navigation</p>
+        </header>
+
+        <section style="animation-delay: 0.1s;">
+            <h2>Clean Architecture</h2>
+            <p>Clean Architecture organizes code into concentric layers. The rule is that dependencies can only point inwards. The core (Domain) knows nothing about the outer layers (Data, UI).</p>
+            <div class="mermaid">
+                graph TD
+                    UI[Presentation: UI/Compose] --> D[Domain: Entities/UseCases]
+                    Data[Data: Repositories/Mappers] --> D
+                    D -- Interface --> Data
+            </div>
+        </section>
+
+        <section style="animation-delay: 0.2s;">
+            <h2>Compose Navigation</h2>
+            <p>Navigation in Compose uses a <code>NavController</code> and a <code>NavHost</code>. Routes are defined as strings, and arguments can be passed via placeholders in the route template.</p>
+            <pre><code>NavHost(navController, startDestination = "list") {
+    composable("list") { MovieListScreen(...) }
+    composable("detail/{id}") { entry ->
+        val id = entry.arguments?.getString("id")
+        MovieDetailScreen(id, ...)
+    }
+}</code></pre>
+        </section>
+
+        <section style="animation-delay: 0.3s;">
+            <h2>Modular Design</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Use Cases</h3>
+                    <p>Small, reusable classes that encapsulate a single business action (e.g., <code>GetPopularMovies</code>).</p>
+                </div>
+                <div class="card">
+                    <h3>Repository Pattern</h3>
+                    <p>Abstracts data sources. The UI calls the Repository interface, which could be implemented by API, DB, or Mock data.</p>
+                </div>
+                <div class="card">
+                    <h3>State Hoisting</h3>
+                    <p>Moving state up to make components stateless and easier to test and reuse.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="animation-delay: 0.4s;">
+            <h2>Learning Outcomes</h2>
+            <ul class="outcome-list">
+                <li>Structured a project using Clean Architecture principles.</li>
+                <li>Implemented the Domain layer as the "Single Source of Truth."</li>
+                <li>Leveraged Compose Navigation for multi-screen app flow.</li>
+                <li>Passed arguments between screens using the Navigation graph.</li>
+                <li>Practiced layer isolation through interfaces and dependency injection.</li>
+            </ul>
+        </section>
+
+        <footer>
+            Kotlin 101 Curriculum &bull; 2026
+        </footer>
+    </div>
+
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+    </script>
+</body>
+</html>

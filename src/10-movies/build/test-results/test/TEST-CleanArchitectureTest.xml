@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CleanArchitectureTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-05-13T06:18:44.027Z" hostname="ip-192-168-0-145.ap-southeast-1.compute.internal" time="0.122">
+<testsuite name="CleanArchitectureTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-06-05T13:47:30.404Z" hostname="baldur10.local" time="0.086">
   <properties/>
-  <testcase name="testUseCaseLogic" classname="CleanArchitectureTest" time="0.115"/>
-  <testcase name="testDomainIsolation" classname="CleanArchitectureTest" time="0.0"/>
+  <testcase name="testGetMovieByIdNonexistent" classname="CleanArchitectureTest" time="0.073"/>
+  <testcase name="testGetMoviesUseCase" classname="CleanArchitectureTest" time="0.001"/>
+  <testcase name="testGetMovieByIdExisting" classname="CleanArchitectureTest" time="0.001"/>
+  <testcase name="testMovieEquality" classname="CleanArchitectureTest" time="0.0"/>
+  <testcase name="testUseCaseDelegatesToRepository" classname="CleanArchitectureTest" time="0.0"/>
+  <testcase name="testMovieDataClassProperties" classname="CleanArchitectureTest" time="0.0"/>
+  <testcase name="testAllMoviesHaveRequiredFields" classname="CleanArchitectureTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

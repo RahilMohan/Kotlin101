@@ -18,3 +18,9 @@
 - [ ] **Step 2: Implement NoteRepository with Flow**
 - [ ] **Step 3: Write tests using a mock data source**
 - [ ] **Step 4: Commit**
+- [ ] **Step 5: Implement File Persistence**
+  - Save and load notes from a JSON file.
+- [ ] **Step 6: Build Compose UI for Notes**
+  - Implement a list of notes and a detail view/editor.
+- [ ] **Step 7: Generate `learning-guide.html`**
+  - Explain the Repository Pattern and Dependency Injection (DI).

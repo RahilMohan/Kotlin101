@@ -18,3 +18,8 @@
 - [ ] **Step 3: Implement `downloadMultipleFiles(...)` using `async`**
 - [ ] **Step 4: Write tests to verify parallel execution timing**
 - [ ] **Step 5: Commit**
+- [ ] **Step 6: Build Interactive CLI with Progress Bars**
+  - Use Mordant's progress bar component.
+  - Download multiple "dummy" files in parallel with randomized speeds.
+- [ ] **Step 7: Generate `learning-guide.html`**
+  - Explain Coroutines, Suspension, and Structured Concurrency.

@@ -19,3 +19,8 @@
 - [ ] **Step 4: Use a Channel to collect stats concurrently**
 - [ ] **Step 5: Write tests for aggregation accuracy**
 - [ ] **Step 6: Commit**
+- [ ] **Step 7: Build CLI for Log Analysis**
+  - Accept log file input.
+  - Display summary table using Mordant.
+- [ ] **Step 8: Generate `learning-guide.html`**
+  - Explain Regex and Channel-based concurrency.

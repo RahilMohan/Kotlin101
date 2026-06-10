@@ -17,3 +17,9 @@
 - [ ] **Step 2: Build Renderer with Canvas simulation**
 - [ ] **Step 3: Write tests for angle calculations**
 - [ ] **Step 4: Commit**
+- [ ] **Step 5: Implement Ambient Mode logic**
+  - Reduce detail and colors for Always-On Display.
+- [ ] **Step 6: Build Compose Desktop Preview**
+  - Use `Canvas` to draw the watch face.
+- [ ] **Step 7: Generate `learning-guide.html`**
+  - Explain the Watch Face Lifecycle, Canvas drawing, and Trigonometry for clocks.

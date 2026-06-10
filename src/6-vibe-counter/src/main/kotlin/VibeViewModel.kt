@@ -1,6 +1,6 @@
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
 
 data class VibeState(
     val count: Int = 0,
@@ -9,36 +9,24 @@ data class VibeState(
 
 class VibeViewModel {
     private val _uiState = MutableStateFlow(VibeState())
-    val uiState = _uiState.asStateFlow()
+    val uiState: StateFlow<VibeState> = _uiState.asStateFlow()
 
-    fun onIncrement() {
-        _uiState.update { currentState ->
-            val newCount = currentState.count + 1
-            currentState.copy(
-                count = newCount,
-                vibeLevel = calculateVibe(newCount)
-            )
+    fun increment() {
+        val newCount = _uiState.value.count + 1
+        updateState(newCount)
+    }
+
+    fun decrement() {
+        val newCount = _uiState.value.count - 1
+        updateState(newCount)
+    }
+
+    private fun updateState(newCount: Int) {
+        val level = when {
+            newCount > 10 -> "High Vibe"
+            newCount < -10 -> "Low Vibe"
+            else -> "Neutral"
         }
-    }
-
-    fun onDecrement() {
-        _uiState.update { currentState ->
-            val newCount = if (currentState.count > 0) currentState.count - 1 else 0
-            currentState.copy(
-                count = newCount,
-                vibeLevel = calculateVibe(newCount)
-            )
-        }
-    }
-
-    fun onReset() {
-        _uiState.value = VibeState()
-    }
-
-    private fun calculateVibe(count: Int): String = when {
-        count > 20 -> "Epic"
-        count > 10 -> "High"
-        count > 0 -> "Vibing"
-        else -> "Neutral"
+        _uiState.value = _uiState.value.copy(count = newCount, vibeLevel = level)
     }
 }

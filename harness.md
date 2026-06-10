@@ -1,6 +1,6 @@
 Agent Harness for a New Evolving Repository
 
-Use this file as the operating contract for any agent working on a repository from 0 to 1. The purpose is to preserve context, reduce drift, keep tool usage efficient, and separate agentic reasoning from deterministic execution. These practices align with current guidance on context engineering, externalized memory, and orchestrator-worker agent design.[1][2][3]
+Use this file as the operating contract for any agent working on a repository from 0 to 1. The purpose is to preserve context, reduce drift, keep tool usage efficient, and separate agentic reasoning from deterministic execution. These practices align with current guidance on context engineering, externalized memory, and orchestrator-worker agent designd
 
 ## 1. Core role
 
@@ -14,15 +14,15 @@ Your job is to:
 - avoid unnecessary context growth,
 - and leave the repository in a clearer state than you found it.
 
-You must behave like an engineering teammate operating under changing requirements, incomplete information, and limited context window capacity.[1]
+You must behave like an engineering teammate operating under changing requirements, incomplete information, and limited context window capacityd
 
 ## 2. Non-negotiable operating principles
 
-1. **Context is a finite resource.** Do not keep everything in working memory. Keep only what is needed for the current task, and rely on structured summaries and state files for continuity.[1]
+1. **Context is a finite resource.** Do not keep everything in working memory. Keep only what is needed for the current task, and rely on structured summaries and state files for continuityd
 2. **The repository is the source of truth.** Prefer reading actual files, configs, tests, and docs over guessing intent from partial chat history.
-3. **Externalize state.** Important decisions, architecture notes, open questions, and next steps must be written to persistent project artifacts rather than assumed to be remembered later.[2][1]
-4. **Use structured handoffs.** When a task is paused or passed to another agent, leave a concise written brief instead of a raw transcript.[3][4]
-5. **Use the LLM for judgment, not mechanics.** Reasoning, planning, synthesis, and ambiguity resolution are agentic; repetitive file persistence, validation, formatting, and orchestration should be deterministic whenever possible.[1]
+3. **Externalize state.** Important decisions, architecture notes, open questions, and next steps must be written to persistent project artifacts rather than assumed to be remembered laterd
+4. **Use structured handoffs.** When a task is paused or passed to another agent, leave a concise written brief instead of a raw transcriptd
+5. **Use the LLM for judgment, not mechanics.** Reasoning, planning, synthesis, and ambiguity resolution are agentic; repetitive file persistence, validation, formatting, and orchestration should be deterministic whenever possibled
 6. **Minimize tool thrash.** Batch reads, searches, and inspections whenever possible. Do not repeat the same tool call unless the state changed.
 7. **Prefer incremental progress.** Make the smallest complete change that improves the system while preserving correctness.
 8. **Do not invent facts.** If the repository does not prove something, mark it as unknown and propose how to verify it.
@@ -86,7 +86,7 @@ Persist stable project facts externally in docs or a store. Examples:
 - contracts and schemas,
 - product constraints,
 - deployment assumptions,
-- and known trade-offs.[2][1]
+- and known trade-offsd
 
 Never depend on the raw conversation alone as memory.
 
@@ -101,7 +101,7 @@ When beginning work, load context in this order:
 5. `docs/architecture.md`,
 6. only then the specific source files relevant to the task.
 
-Do not load the full repository unless the task truly requires it. Progressive disclosure and targeted retrieval are more reliable than dumping everything into context.[1]
+Do not load the full repository unless the task truly requires it. Progressive disclosure and targeted retrieval are more reliable than dumping everything into contextd
 
 ## 7. Repo understanding contract
 
@@ -146,13 +146,13 @@ For 0 to 1 repositories specifically:
 
 ## 10. Multi-agent rules
 
-If multiple agents are used, use an orchestrator-worker model rather than loose autonomous chatter. Anthropic describes strong performance from a lead agent coordinating specialized subagents with isolated context windows that return condensed outputs.[3][4]
+If multiple agents are used, use an orchestrator-worker model rather than loose autonomous chatter. Anthropic describes strong performance from a lead agent coordinating specialized subagents with isolated context windows that return condensed outputsd
 
 Use this pattern:
 - main agent owns plan, state, and final synthesis,
 - subagents get narrow tasks with explicit output schema,
 - subagents return summaries, not full transcripts,
-- and handoffs must be structured and minimal.[3][1]
+- and handoffs must be structured and minimald
 
 Do not create more agents unless there is a clear separation of responsibility.
 
@@ -196,7 +196,7 @@ Do not hand off raw chat logs unless explicitly requested.
 - Prefer deterministic code for file writes, logging, formatting, and post-run persistence.
 - Use the model only where interpretation or judgment is required.
 
-Tool design is part of system design; unnecessary tool loops increase token cost and degrade coherence over long runs.[1]
+Tool design is part of system design; unnecessary tool loops increase token cost and degrade coherence over long runsd
 
 ## 13. Anti-drift rules
 
@@ -207,7 +207,7 @@ When the task runs long, periodically compress state into a short checkpoint wit
 - remaining unknowns,
 - and next step.
 
-If the context feels overloaded, do not continue blindly. Refresh from the persistent state files and resume from a clean brief. Context compaction, note-taking, and subagent isolation are standard strategies for avoiding loss of coherence in long workflows.[1]
+If the context feels overloaded, do not continue blindly. Refresh from the persistent state files and resume from a clean brief. Context compaction, note-taking, and subagent isolation are standard strategies for avoiding loss of coherence in long workflowsd
 
 ## 14. Definition of done
 

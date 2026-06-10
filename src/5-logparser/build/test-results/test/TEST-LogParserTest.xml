@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="LogParserTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-05-13T06:12:22.443Z" hostname="ip-192-168-0-145.ap-southeast-1.compute.internal" time="0.107">
+<testsuite name="LogParserTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-06-05T13:14:38.842Z" hostname="baldur10.local" time="0.08">
   <properties/>
-  <testcase name="testFlowParsing" classname="LogParserTest" time="0.099"/>
-  <testcase name="testChannelAggregation" classname="LogParserTest" time="0.003"/>
+  <testcase name="testParseLineInfo" classname="LogParserTest" time="0.01"/>
+  <testcase name="testParseLineWarn" classname="LogParserTest" time="0.0"/>
+  <testcase name="testInvalidLine" classname="LogParserTest" time="0.0"/>
+  <testcase name="testParseLineError" classname="LogParserTest" time="0.0"/>
+  <testcase name="testAggregateStats" classname="LogParserTest" time="0.056"/>
+  <testcase name="testEmptyFlowProducesEmptyStats" classname="LogParserTest" time="0.002"/>
+  <testcase name="testAllLogLevels" classname="LogParserTest" time="0.001"/>
+  <testcase name="testSingleEntryStats" classname="LogParserTest" time="0.001"/>
+  <testcase name="testMixedValidAndInvalidLines" classname="LogParserTest" time="0.001"/>
+  <testcase name="testParseLineWithSpecialCharacters" classname="LogParserTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

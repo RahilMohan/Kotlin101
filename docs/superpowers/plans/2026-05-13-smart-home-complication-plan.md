@@ -17,3 +17,8 @@
 - [ ] **Step 2: Build Provider logic with toggle capability**
 - [ ] **Step 3: Write tests for data refresh and state toggling**
 - [ ] **Step 4: Commit**
+- [ ] **Step 5: Build Complication Preview UI**
+  - Visualize how the complication appears in different slots.
+  - Implement a toggle action (e.g., Turn Lights On/Off).
+- [ ] **Step 6: Generate `learning-guide.html`**
+  - Explain the Complication Data API, Provider lifecycle, and System interactions.

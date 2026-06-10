@@ -1,0 +1,26 @@
+{
+  "id": "watchface_20260604",
+  "title": "Project 11: Watchface",
+  "type": "feature",
+  "status": "completed",
+  "priority": "medium",
+  "created": "2026-06-04T17:00:00Z",
+  "updated": "2026-06-10T21:10:00Z",
+  "started": "2026-06-04T17:00:00Z",
+  "completed": "2026-06-10T21:10:00Z",
+  "assignee": "@gemini",
+  "phases": {
+    "total": 1,
+    "current": 1,
+    "completed": 1
+  },
+  "tasks": {
+    "total": 3,
+    "completed": 3,
+    "in_progress": 0,
+    "pending": 0
+  },
+  "checkpoints": [],
+  "dependencies": [],
+  "tags": ["canvas", "compose", "wear-os"]
+}

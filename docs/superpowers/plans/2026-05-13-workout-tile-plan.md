@@ -17,3 +17,8 @@
 - [ ] **Step 2: Build Layout Factory using Kotlin DSL**
 - [ ] **Step 3: Write tests for layout correctness**
 - [ ] **Step 4: Commit**
+- [ ] **Step 5: Build Tile Preview UI**
+  - Create a circular preview window to simulate the watch face.
+  - Implement the "Glanceable" design pattern.
+- [ ] **Step 6: Generate `learning-guide.html`**
+  - Explain the Tiles API, ProtoLayout, and Glanceable UI principles.

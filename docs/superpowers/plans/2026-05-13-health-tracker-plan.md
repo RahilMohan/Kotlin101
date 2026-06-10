@@ -17,3 +17,8 @@
 - [ ] **Step 2: Build HealthManager to control start/stop**
 - [ ] **Step 3: Write tests for data emission and cleanup**
 - [ ] **Step 4: Commit**
+- [ ] **Step 5: Build Health Dashboard UI**
+  - Display real-time heart rate and step counts.
+  - Use smooth animations for value changes.
+- [ ] **Step 6: Generate `learning-guide.html`**
+  - Explain Sensor Event Listeners, Cold vs. Hot Flows, and Background Services.

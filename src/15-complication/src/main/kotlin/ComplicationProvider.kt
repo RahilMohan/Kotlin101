@@ -1,24 +1,23 @@
-data class ComplicationDisplayData(
-    val shortText: String,
-    val iconId: String,
-    val contentDescription: String
+data class ComplicationState(
+    val title: String,
+    val icon: String,
+    val isActive: Boolean
 )
 
-class ComplicationProvider {
-    private var isLightOn: Boolean = false
+class SmartHomeComplicationProvider {
+    private var currentState = ComplicationState("Lights", "💡", false)
 
-    fun onUpdate(): ComplicationDisplayData {
-        return if (isLightOn) {
-            ComplicationDisplayData("ON", "ic_light_on", "Lights are active")
-        } else {
-            ComplicationDisplayData("OFF", "ic_light_off", "Lights are inactive")
-        }
+    fun getComplicationData(): ComplicationState = currentState
+
+    fun toggleState(): ComplicationState {
+        currentState = currentState.copy(isActive = !currentState.isActive)
+        return currentState
     }
 
-    fun onUserTap(): Boolean {
-        isLightOn = !isLightOn
-        return isLightOn
+    /**
+     * Simulates the system request for a data update.
+     */
+    fun onUpdateRequested(): String {
+        return "Complication Type: SHORT_TEXT, Value: ${if (currentState.isActive) "ON" else "OFF"}"
     }
-    
-    fun getStatus(): Boolean = isLightOn
 }

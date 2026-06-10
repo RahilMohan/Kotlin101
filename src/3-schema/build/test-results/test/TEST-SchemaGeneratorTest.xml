@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="SchemaGeneratorTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-05-13T06:08:04.016Z" hostname="ip-192-168-0-145.ap-southeast-1.compute.internal" time="0.302">
+<testsuite name="SchemaGeneratorTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-06-05T13:00:37.837Z" hostname="baldur10.local" time="0.536">
   <properties/>
-  <testcase name="testSimpleClass" classname="SchemaGeneratorTest" time="0.279"/>
-  <testcase name="testNestedClass" classname="SchemaGeneratorTest" time="0.02"/>
+  <testcase name="testEmptyClass" classname="SchemaGeneratorTest" time="0.269"/>
+  <testcase name="testAllTypes" classname="SchemaGeneratorTest" time="0.011"/>
+  <testcase name="testSimpleSchema" classname="SchemaGeneratorTest" time="0.004"/>
+  <testcase name="testNestedObjectSchema" classname="SchemaGeneratorTest" time="0.02"/>
+  <testcase name="testArraySchema" classname="SchemaGeneratorTest" time="0.027"/>
+  <testcase name="testSetSupport" classname="SchemaGeneratorTest" time="0.003"/>
+  <testcase name="testGenerateForClass" classname="SchemaGeneratorTest" time="0.0"/>
+  <testcase name="testBooleanType" classname="SchemaGeneratorTest" time="0.003"/>
+  <testcase name="testSchemaIsValidJson" classname="SchemaGeneratorTest" time="0.0"/>
+  <testcase name="testMapSupport" classname="SchemaGeneratorTest" time="0.182"/>
+  <testcase name="testNullableExcludedFromRequired" classname="SchemaGeneratorTest" time="0.001"/>
+  <testcase name="testComplexNestedSchema" classname="SchemaGeneratorTest" time="0.008"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

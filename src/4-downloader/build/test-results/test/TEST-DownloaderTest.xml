@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DownloaderTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-05-13T06:09:41.323Z" hostname="ip-192-168-0-145.ap-southeast-1.compute.internal" time="0.102">
+<testsuite name="DownloaderTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-06-10T13:17:14.269Z" hostname="baldur10.local" time="0.127">
   <properties/>
-  <testcase name="testParallelExecution" classname="DownloaderTest" time="0.096"/>
-  <testcase name="testSingleDownload" classname="DownloaderTest" time="0.002"/>
-  <system-out><![CDATA[Starting download: file1 (5 MB)
-Starting download: file2 (5 MB)
-Starting download: file3 (5 MB)
-Total time: 17ms
-Starting download: test.txt (10 MB)
+  <testcase name="testSingleFileDownload" classname="DownloaderTest" time="0.1"/>
+  <testcase name="testProgressNeverExceeds100" classname="DownloaderTest" time="0.002"/>
+  <testcase name="testDownloadMultipleFiles" classname="DownloaderTest" time="0.012"/>
+  <testcase name="testDownloadFailure" classname="DownloaderTest" time="0.002"/>
+  <testcase name="testZeroSizedFile" classname="DownloaderTest" time="0.002"/>
+  <testcase name="testParallelDownloads" classname="DownloaderTest" time="0.002"/>
+  <testcase name="testSmallFileCompletesInOneStep" classname="DownloaderTest" time="0.001"/>
+  <system-out><![CDATA[Starting download: a.bin
+Starting download: b.bin
+Starting download: c.bin
+Finished download process: a.bin
+Finished download process: b.bin
+Finished download process: c.bin
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

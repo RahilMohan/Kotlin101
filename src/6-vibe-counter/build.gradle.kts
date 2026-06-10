@@ -1,5 +1,8 @@
 plugins {
     kotlin("jvm") version "2.3.21"
+    id("org.jetbrains.compose") version "1.7.3"
+    id("org.jetbrains.kotlin.plugin.compose") version "2.3.21"
+    application
 }
 
 group = "com.vibe.kotlin101"
@@ -8,13 +11,29 @@ version = "1.0-SNAPSHOT"
 repositories {
     mavenCentral()
     google()
+    maven("https://maven.pkg.jetbrains.tech/compose/release")
 }
 
 dependencies {
+    implementation(compose.desktop.currentOs)
+    implementation(compose.material3)
+    implementation(compose.foundation)
+    implementation(compose.runtime)
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
     testImplementation(kotlin("test"))
 }
 
-kotlin {
-    jvmToolchain(25)
+application {
+    mainClass.set("MainKt")
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+    }
+}
+
+tasks.withType<JavaCompile>().configureEach {
+    targetCompatibility = "21"
+    sourceCompatibility = "21"
 }

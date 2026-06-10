@@ -18,3 +18,10 @@
 - [ ] **Step 3: Implement Byte Conversion for Data Layer**
 - [ ] **Step 4: Write tests for payload accuracy and diffing**
 - [ ] **Step 5: Commit**
+- [ ] **Step 6: Implement Conflict Resolution**
+  - Add logic to handle version mismatches.
+  - Implement Last-Writer-Wins strategy.
+- [ ] **Step 7: Build Sync Status UI**
+  - Visualize the sync progress and device pairing status.
+- [ ] **Step 8: Generate `learning-guide.html`**
+  - Explain Data Layer synchronization, Conflict Resolution, and the Wear OS Data Client API.

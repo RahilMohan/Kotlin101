@@ -1,29 +1,39 @@
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
+import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.encodeToString
 
-class ChatService(private val ioDispatcher: CoroutineDispatcher = Dispatchers.Default) {
-    
-    // Simulate incoming messages from a JSON WebSocket
-    val messageFlow: Flow<ChatMessage> = channelFlow {
-        val messages = listOf(
-            ChatMessage("Bot", "Welcome to Kotlin Chat!"),
-            ChatMessage("System", "You are now connected."),
-            ChatMessage("Bot", "How is your learning journey?")
-        )
-        
-        for (msg in messages) {
-            send(msg)
-            delay(100) // Simulate time between messages
-        }
-    }.flowOn(ioDispatcher)
+@Serializable
+data class ChatMessage(
+    val sender: String,
+    val content: String,
+    val timestamp: Long = System.currentTimeMillis(),
+    val isMe: Boolean = false
+)
 
-    fun serializeMessage(message: ChatMessage): String {
-        return Json.encodeToString(message)
+class ChatService {
+    private val _messages = MutableStateFlow<List<ChatMessage>>(emptyList())
+    val messages: StateFlow<List<ChatMessage>> = _messages.asStateFlow()
+
+    private val _isTyping = MutableStateFlow(false)
+    val isTyping: StateFlow<Boolean> = _isTyping.asStateFlow()
+
+    fun sendMessage(content: String) {
+        val msg = ChatMessage("Me", content, isMe = true)
+        _messages.value = _messages.value + msg
+
+        // Simulate bot reply
+        simulateBotReply()
     }
 
-    fun deserializeMessage(json: String): ChatMessage {
-        return Json.decodeFromString(json)
+    private fun simulateBotReply() {
+        CoroutineScope(Dispatchers.Default).launch {
+            delay(1000)
+            _isTyping.value = true
+            delay(2000)
+            _isTyping.value = false
+            val botMsg = ChatMessage("VibeBot", "I received your message! How can I help further?")
+            _messages.value = _messages.value + botMsg
+        }
     }
 }

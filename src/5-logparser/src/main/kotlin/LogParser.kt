@@ -1,43 +1,41 @@
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
-import kotlinx.coroutines.channels.*
 
-enum class LogLevel { INFO, WARN, ERROR }
-data class LogEntry(val level: LogLevel, val message: String)
-data class LogStats(val errorCount: Int, val totalProcessed: Int)
+data class LogEntry(
+    val timestamp: String,
+    val level: String,
+    val message: String
+)
 
 class LogParser {
+    // Standard log format: [2026-05-26 10:00:00] ERROR: Something went wrong
+    private val regex = Regex("""\[(.*)\]\s+(INFO|WARN|ERROR):\s+(.*)""")
 
-    fun parseLogs(lines: List<String>): Flow<LogEntry> = flow {
-        lines.forEach { line ->
-            val level = when {
-                line.contains("ERROR") -> LogLevel.ERROR
-                line.contains("WARN") -> LogLevel.WARN
-                else -> LogLevel.INFO
+    fun parseLine(line: String): LogEntry? {
+        val match = regex.find(line) ?: return null
+        val (timestamp, level, message) = match.destructured
+        return LogEntry(timestamp, level, message)
+    }
+
+    fun parseLogs(lines: Flow<String>): Flow<LogEntry> =
+        lines.mapNotNull { parseLine(it) }
+
+    suspend fun aggregateStats(entries: Flow<LogEntry>): Map<String, Int> = coroutineScope {
+        val stats = mutableMapOf<String, Int>()
+        val channel = kotlinx.coroutines.channels.Channel<LogEntry>()
+
+        val aggregatorJob = launch {
+            for (entry in channel) {
+                stats[entry.level] = stats.getOrDefault(entry.level, 0) + 1
             }
-            emit(LogEntry(level, line))
-        }
-    }.flowOn(Dispatchers.Default)
-
-    suspend fun aggregateStats(logFlow: Flow<LogEntry>): LogStats = coroutineScope {
-        val channel = Channel<LogLevel>()
-        var errors = 0
-        var total = 0
-
-        // Producer
-        launch {
-            logFlow.collect { entry ->
-                channel.send(entry.level)
-            }
-            channel.close()
         }
 
-        // Consumer
-        for (level in channel) {
-            total++
-            if (level == LogLevel.ERROR) errors++
+        entries.collect { entry ->
+            channel.send(entry)
         }
+        channel.close()
+        aggregatorJob.join()
 
-        LogStats(errors, total)
+        stats
     }
 }

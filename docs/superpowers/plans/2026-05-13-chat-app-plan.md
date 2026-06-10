@@ -19,3 +19,8 @@
 - [ ] **Step 3: Build ChatService with simulated incoming Flow**
 - [ ] **Step 4: Write tests for JSON round-tripping and Flow emissions**
 - [ ] **Step 5: Commit**
+- [ ] **Step 6: Build Compose UI for Chat**
+  - Implement a message list with bubble styling.
+  - Add "Typing..." indicator.
+- [ ] **Step 7: Generate `learning-guide.html`**
+  - Explain WebSockets, Bi-directional communication, and advanced Serialization.

@@ -2,36 +2,29 @@ import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.sin
 
-data class Point(val x: Float, val y: Float)
+data class HandAngles(
+    val hour: Float,
+    val minute: Float,
+    val second: Float
+)
 
-class WatchFaceRenderer(private val centerX: Float, private val centerY: Float) {
+class WatchFaceRenderer {
 
-    fun calculateHandEndpoint(angleDegrees: Float, length: Float): Point {
-        val angleRadians = (angleDegrees - 90) * (PI / 180).toFloat()
-        val x = centerX + length * cos(angleRadians.toDouble()).toFloat()
-        val y = centerY + length * sin(angleRadians.toDouble()).toFloat()
-        return Point(x, y)
+    /**
+     * Calculates angles in radians for clock hands based on time.
+     * 0 radians is at 3 o'clock, so we subtract PI/2 to start at 12.
+     */
+    fun calculateAngles(hour: Int, minute: Int, second: Int): HandAngles {
+        val s = (second * 6 * (PI / 180) - PI / 2).toFloat()
+        val m = (minute * 6 * (PI / 180) - PI / 2).toFloat()
+        val h = ((hour % 12 + minute / 60f) * 30 * (PI / 180) - PI / 2).toFloat()
+
+        return HandAngles(h, m, s)
     }
 
-    fun getSecondHandAngle(seconds: Int): Float = seconds * 6f
-    fun getMinuteHandAngle(minutes: Int, seconds: Int): Float = minutes * 6f + (seconds / 10f)
-    fun getHourHandAngle(hours: Int, minutes: Int): Float = (hours % 12) * 30f + (minutes / 2f)
-
-    fun render(hours: Int, minutes: Int, seconds: Int, isAmbient: Boolean): String {
-        val hAngle = getHourHandAngle(hours, minutes)
-        val mAngle = getMinuteHandAngle(minutes, seconds)
-        val sAngle = getSecondHandAngle(seconds)
-
-        val builder = StringBuilder()
-        builder.append("Rendering Watch Face (Ambient: $isAmbient)\n")
-        builder.append("Time: %02d:%02d:%02d\n".format(hours, minutes, seconds))
-        builder.append("Hour Hand Angle: $hAngle°\n")
-        builder.append("Minute Hand Angle: $mAngle°\n")
-        if (!isAmbient) {
-            builder.append("Second Hand Angle: $sAngle°\n")
-        } else {
-            builder.append("Second Hand Hidden (Power Save)\n")
-        }
-        return builder.toString()
+    fun getHandOffset(angle: Float, length: Float): Pair<Float, Float> {
+        val x = cos(angle.toDouble()).toFloat() * length
+        val y = sin(angle.toDouble()).toFloat() * length
+        return x to y
     }
 }

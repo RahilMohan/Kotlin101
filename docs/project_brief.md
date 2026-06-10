@@ -16,6 +16,7 @@ A 16-project curriculum (0-15) moving from CLI fundamentals to specialized Wear 
 - Legacy Android (Java-based) patterns.
 
 ## Success Criteria
-- Completion of 15 functional projects.
+- Completion of 16 functional projects.
 - Mastery of Jetpack Compose for both Mobile and Wearable.
 - Proficient use of Wear OS sensors, Tiles, and Complications.
+- Creation of interactive HTML learning guides for each project explaining core concepts.

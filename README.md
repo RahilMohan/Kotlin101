@@ -24,10 +24,17 @@ learn Kotlin from the ground up — from CLI fundamentals to Wear OS apps.
 
 ## Getting Started
 
+To build and run any project module:
 ```bash
-# Build and run the current project (calculator)
-cd src/1-calculator
+# Navigate to the project directory (e.g., Project 10 Movie App)
+cd src/10-movies
 ./gradlew run
+```
+
+To run tests for a project:
+```bash
+cd src/10-movies
+./gradlew test
 ```
 
 ## Guiding Principles

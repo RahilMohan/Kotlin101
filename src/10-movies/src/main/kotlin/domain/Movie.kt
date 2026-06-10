@@ -7,6 +7,11 @@ data class Movie(
     val rating: Double
 )
 
+class GetMoviesUseCase(private val repository: MovieRepository) {
+    suspend operator fun invoke(): List<Movie> = repository.getPopularMovies()
+}
+
 interface MovieRepository {
-    suspend fun getMovies(): List<Movie>
+    suspend fun getPopularMovies(): List<Movie>
+    suspend fun getMovieById(id: Int): Movie?
 }
