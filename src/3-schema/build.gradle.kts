@@ -1,7 +1,8 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-    kotlin("jvm") version "2.3.21"
+    kotlin("jvm") version "2.4.21"
+    kotlin("plugin.serialization") version "2.4.21"
     application
 }
 
@@ -14,7 +15,8 @@ repositories {
 
 dependencies {
     implementation(kotlin("reflect"))
-    implementation("com.github.ajalt.mordant:mordant:2.7.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.12.0")
+    implementation("com.github.ajalt.mordant:mordant:3.1.0")
     testImplementation(kotlin("test"))
 }
 

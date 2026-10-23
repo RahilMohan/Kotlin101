@@ -1,5 +1,7 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
-    kotlin("jvm") version "2.3.21"
+    kotlin("jvm") version "2.4.21"
     application
 }
 
@@ -11,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.ajalt.mordant:mordant:2.7.2")
+    implementation("com.github.ajalt.mordant:mordant:3.1.0")
     testImplementation(kotlin("test"))
 }
 
@@ -19,6 +21,13 @@ application {
     mainClass.set("MainKt")
 }
 
-kotlin {
-    jvmToolchain(25)
+tasks.withType<JavaCompile>().configureEach {
+    targetCompatibility = "21"
+    sourceCompatibility = "21"
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_21)
+    }
 }

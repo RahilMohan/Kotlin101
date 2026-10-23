@@ -1,10 +1,10 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-    kotlin("jvm") version "2.3.21"
-    kotlin("plugin.serialization") version "2.3.21"
-    id("org.jetbrains.compose") version "1.7.3"
-    id("org.jetbrains.kotlin.plugin.compose") version "2.3.21"
+    kotlin("jvm") version "2.4.21"
+    kotlin("plugin.serialization") version "2.4.21"
+    id("org.jetbrains.compose") version "1.12.2"
+    id("org.jetbrains.kotlin.plugin.compose") version "2.4.21"
     application
 }
 
@@ -14,15 +14,17 @@ version = "1.0-SNAPSHOT"
 repositories {
     mavenCentral()
     google()
+    maven("https://maven.pkg.jetbrains.tech/compose/release")
 }
 
 dependencies {
     implementation(compose.desktop.currentOs)
-    implementation(compose.material3)
-    implementation(compose.foundation)
+    implementation("org.jetbrains.compose.material3:material3:1.12.0-alpha03")
+    implementation("org.jetbrains.compose.foundation:foundation:1.12.2")
+    implementation("androidx.compose.material:material-icons-extended:1.7.6")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.12.0")
 
     testImplementation(kotlin("test"))
 }
@@ -30,6 +32,10 @@ dependencies {
 application {
     mainClass.set("MainKt")
 }
+
+// Disable distribution tasks that have duplicate file issues with Compose 1.12.x
+tasks.named("distTar").configure { enabled = false }
+tasks.named("distZip").configure { enabled = false }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
     compilerOptions {
