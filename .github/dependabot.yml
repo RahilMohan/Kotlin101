@@ -1,0 +1,26 @@
+version: 2
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 10
+    groups:
+      kotlin:
+        patterns: ["org.jetbrains.kotlin*"]
+        applies-to: version-updates
+      compose:
+        patterns: ["org.jetbrains.compose*", "androidx.compose*"]
+        applies-to: version-updates
+      kotlinx:
+        patterns: ["org.jetbrains.kotlinx*"]
+        applies-to: version-updates
+      ktor:
+        patterns: ["io.ktor*"]
+        applies-to: version-updates
+      mordant:
+        patterns: ["com.github.ajalt.mordant*"]
+        applies-to: version-updates

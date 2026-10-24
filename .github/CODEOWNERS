@@ -1,0 +1,28 @@
+# Global
+* @Baldur10
+
+# Phase 1: CLI
+/src/1-calculator/ @Baldur10
+/src/2-inventory/ @Baldur10
+/src/3-schema/ @Baldur10
+/src/4-downloader/ @Baldur10
+/src/5-logparser/ @Baldur10
+
+# Phase 2: Compose Mobile
+/src/6-vibe-counter/ @Baldur10
+/src/7-weather/ @Baldur10
+/src/8-notes/ @Baldur10
+/src/9-chat/ @Baldur10
+/src/10-movies/ @Baldur10
+
+# Phase 3: Wear OS
+/src/11-watchface/ @Baldur10
+/src/12-health/ @Baldur10
+/src/13-tile/ @Baldur10
+/src/14-sync/ @Baldur10
+/src/15-complication/ @Baldur10
+
+# Infrastructure
+/.github/ @Baldur10
+/README.md @Baldur10
+/docs/ @Baldur10
