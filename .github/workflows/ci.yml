@@ -12,7 +12,7 @@ jobs:
   build:
     name: Build All Projects
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,7 +38,7 @@ jobs:
           for dir in src/*/; do
             if [ -f "$dir/build.gradle.kts" ]; then
               echo "Building $dir"
-              (cd "$dir" && ./gradlew build --no-daemon --console=plain --offline)
+              (cd "$dir" && ./gradlew build --no-daemon --console=plain --stacktrace)
             fi
           done
 
