@@ -29,18 +29,19 @@ jobs:
         with:
           gradle-version: '9.8.2'
 
-      - name: Verify Gradle
-        run: gradle --version
-
       - name: Build all projects
         run: |
           set -e
           for dir in src/*/; do
             if [ -f "$dir/build.gradle.kts" ]; then
               echo "Building $dir"
-              (cd "$dir" && ./gradlew build --no-daemon --console=plain --stacktrace)
+              (cd "$dir" && ./gradlew build --no-daemon --console=plain --stacktrace) || {
+                echo "FAILED: $dir"
+                exit 1
+              }
             fi
           done
+        timeout-minutes: 40
 
       - name: Upload build reports
         if: failure()
