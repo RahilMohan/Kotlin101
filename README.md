@@ -6,9 +6,9 @@
 [![JDK](https://img.shields.io/badge/JDK-21-007396?style=flat&logo=openjdk&logoColor=white)](https://openjdk.org/projects/jdk/21/)
 [![Wear OS](https://img.shields.io/badge/Wear%20OS-4%20(API%2033)-3DDC84?style=flat&logo=android&logoColor=white)](https://developer.android.com/wear)
 [![License](https://img.shields.io/badge/License-Apache%202.0-D22128?style=flat&logo=apache&logoColor=white)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/Baldur10/Kotlin101?style=flat&logo=github&logoColor=white)](https://github.com/Baldur10/Kotlin101/stargazers)
-[![Last Commit](https://img.shields.io/github/last-commit/Baldur10/Kotlin101?style=flat&logo=git&logoColor=white)](https://github.com/Baldur10/Kotlin101/commits/main)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/Baldur10/Kotlin101/ci.yml?branch=main&style=flat&logo=githubactions&logoColor=white)](https://github.com/Baldur10/Kotlin101/actions)
+[![GitHub Stars](https://img.shields.io/github/stars/RahilMohan/Kotlin101?style=flat&logo=github&logoColor=white)](https://github.com/RahilMohan/Kotlin101/stargazers)
+[![Last Commit](https://img.shields.io/github/last-commit/RahilMohan/Kotlin101?style=flat&logo=git&logoColor=white)](https://github.com/RahilMohan/Kotlin101/commits/main)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/RahilMohan/Kotlin101/ci.yml?branch=main&style=flat&logo=githubactions&logoColor=white)](https://github.com/RahilMohan/Kotlin101/actions)
 
 Welcome to **Kotlin101**, a progressive **15-project curriculum** designed to take engineers with prior JavaScript/Python experience to advanced Kotlin, Jetpack Compose Multiplatform, and Wear OS development.
 
@@ -250,6 +250,18 @@ graph TB
   - **UI:** ViewModels, Compose screens, and State wrappers.
 - **Aesthetics & UX:** UI modules should have rich modern aesthetics (glassmorphism, tailored HSL color palettes, responsive layouts).
 - **Self-contained Learning:** Open `learning-guide.html` in your web browser inside any project folder to read detailed concept breakdowns and debugging exercises.
+
+---
+
+## License
+
+This project is open-source software licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Repository
+
+**GitHub:** https://github.com/RahilMohan/Kotlin101
 
 ---
 
