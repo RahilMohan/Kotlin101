@@ -38,7 +38,7 @@ jobs:
           for dir in src/*/; do
             if [ -f "$dir/build.gradle.kts" ]; then
               echo "Building $dir"
-              (cd "$dir" && gradle build --no-daemon --console=plain)
+              (cd "$dir" && ./gradlew build --no-daemon --console=plain --offline)
             fi
           done
 
