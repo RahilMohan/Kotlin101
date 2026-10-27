@@ -1,14 +1,14 @@
 # Kotlin & Wear OS Mastery Curriculum
 
-[![Kotlin](https://img.shields.io/badge/Kotlin-2.4.21-7F52FF?style=flat&logo=kotlin&logoColor=white)](https://kotlinlang.org)
-[![Compose Multiplatform](https://img.shields.io/badge/Compose%20Multiplatform-1.12.2-4285F4?style=flat&logo=jetpackcompose&logoColor=white)](https://www.jetbrains.com/lp/compose-multiplatform/)
-[![Gradle](https://img.shields.io/badge/Gradle-9.x-02303A?style=flat&logo=gradle&logoColor=white)](https://gradle.org)
-[![JDK](https://img.shields.io/badge/JDK-21-007396?style=flat&logo=openjdk&logoColor=white)](https://openjdk.org/projects/jdk/21/)
-[![Wear OS](https://img.shields.io/badge/Wear%20OS-4%20(API%2033)-3DDC84?style=flat&logo=android&logoColor=white)](https://developer.android.com/wear)
-[![License](https://img.shields.io/badge/License-Apache%202.0-D22128?style=flat&logo=apache&logoColor=white)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/RahilMohan/Kotlin101?style=flat&logo=github&logoColor=white)](https://github.com/RahilMohan/Kotlin101/stargazers)
-[![Last Commit](https://img.shields.io/github/last-commit/RahilMohan/Kotlin101?style=flat&logo=git&logoColor=white)](https://github.com/RahilMohan/Kotlin101/commits/main)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/RahilMohan/Kotlin101/ci.yml?branch=main&style=flat&logo=githubactions&logoColor=white)](https://github.com/RahilMohan/Kotlin101/actions)
+[![Kotlin](https://img.shields.io/badge/Kotlin-2.4.21-7F52FF?style=flat-square&logo=kotlin&logoColor=white)](https://kotlinlang.org)
+[![Compose Multiplatform](https://img.shields.io/badge/Compose%20Multiplatform-1.12.2-4285F4?style=flat-square&logo=jetpackcompose&logoColor=white)](https://www.jetbrains.com/lp/compose-multiplatform/)
+[![Gradle](https://img.shields.io/badge/Gradle-9.x-02303A?style=flat-square&logo=gradle&logoColor=white)](https://gradle.org)
+[![JDK](https://img.shields.io/badge/JDK-21-007396?style=flat-square&logo=openjdk&logoColor=white)](https://openjdk.org/projects/jdk/21/)
+[![Wear OS](https://img.shields.io/badge/Wear%20OS-4%20(API%2033)-3DDC84?style=flat-square&logo=android&logoColor=white)](https://developer.android.com/wear)
+[![License](https://img.shields.io/badge/License-Apache%202.0-D22128?style=flat-square&logo=apache&logoColor=white)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/RahilMohan/Kotlin101?style=flat-square&logo=github&logoColor=white)](https://github.com/RahilMohan/Kotlin101/stargazers)
+[![Last Commit](https://img.shields.io/github/last-commit/RahilMohan/Kotlin101?style=flat-square&logo=git&logoColor=white)](https://github.com/RahilMohan/Kotlin101/commits/main)
+[![CI](https://img.shields.io/github/actions/workflow/status/RahilMohan/Kotlin101/ci.yml?branch=main&style=flat-square&logo=githubactions&logoColor=white)](https://github.com/RahilMohan/Kotlin101/actions)
 
 Welcome to **Kotlin101**, a progressive **15-project curriculum** designed to take engineers with prior JavaScript/Python experience to advanced Kotlin, Jetpack Compose Multiplatform, and Wear OS development.
 
@@ -263,10 +263,4 @@ This project is open-source software licensed under the **Apache License 2.0**. 
 
 **GitHub:** https://github.com/RahilMohan/Kotlin101
 
----
-
-## License
-
-This project is open-source software licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for details.
-
-Copyright 2026 Rahil Mohan# CI Trigger
+Copyright 2026 Rahil Mohan

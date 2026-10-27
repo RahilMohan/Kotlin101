@@ -1,7 +1,10 @@
 version: 2
 updates:
+  # Each project is its own Gradle build with its own build.gradle.kts, so
+  # Dependabot needs an entry covering every project directory, not just "/".
   - package-ecosystem: "gradle"
-    directory: "/"
+    directories:
+      - "/src/*"
     schedule:
       interval: "weekly"
       day: "monday"
@@ -23,4 +26,21 @@ updates:
         applies-to: version-updates
       mordant:
         patterns: ["com.github.ajalt.mordant*"]
+        applies-to: version-updates
+      androidx:
+        patterns: ["androidx.*"]
+        applies-to: version-updates
+
+  # Keep the workflows' pinned action SHAs current.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 5
+    groups:
+      actions:
+        patterns: ["*"]
         applies-to: version-updates
