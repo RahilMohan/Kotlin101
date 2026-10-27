@@ -1,7 +1,8 @@
 # Gradle
-.gradle
+.gradle/
 build/
-!src/**/build/
+**/build/
+!**/gradle/wrapper/gradle-wrapper.jar
 
 # IntelliJ / Android Studio
 .idea/
@@ -20,6 +21,10 @@ captures/
 
 # Kotlin
 *.kotlin_module
+*.class
+
+# Agent tooling
+.superpowers/
 
 # OS
 .DS_Store
