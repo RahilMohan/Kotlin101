@@ -4,6 +4,7 @@ import androidx.compose.ui.window.application
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.savedstate.read
 import data.MockMovieRepository
 import domain.GetMoviesUseCase
 import domain.Movie
@@ -27,7 +28,7 @@ fun main() = application {
                 })
             }
             composable("detail/{movieId}") { backStackEntry ->
-                val movieId = backStackEntry.arguments?.getString("movieId")?.toIntOrNull() ?: 0
+                val movieId = backStackEntry.arguments?.read { getStringOrNull("movieId") }?.toIntOrNull() ?: 0
                 MovieDetailScreen(movieId = movieId, repository = repository, onBack = {
                     navController.popBackStack()
                 })
