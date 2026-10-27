@@ -19,7 +19,7 @@ class HealthManager {
                 delay(1000)
                 val current = _stats.value
                 val newHr = (current.heartRate + (-2..2).random()).coerceIn(60, 180)
-                val newSteps = current.steps + (0..10).random()
+                val newSteps = current.steps + (1..10).random()
                 _stats.value = HealthStats(newHr, newSteps)
             }
         }
