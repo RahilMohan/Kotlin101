@@ -18,5 +18,16 @@
 16. [x] **Project 15: Smart Home Complication**
 
 ---
+
+## Repository Infrastructure (post-curriculum)
+
+17. [x] CI builds all 15 projects and reports every failure
+18. [x] `main` branch protection applied and verified (force-push, direct push, delete all rejected)
+19. [x] Actions pinned to commit SHAs at latest majors; runner pinned to `ubuntu-24.04`
+20. [x] Dependabot covers `src/*` Gradle builds and GitHub Actions
+21. [ ] Decide whether Wear OS projects (11–15) need an Android SDK step in CI
+22. [ ] Decide whether `src/0-environment` shell check should run in CI (needs Android SDK on the runner)
+
+---
 **🎉 Curriculum Completed 🎉**
 All projects 0-15 verified and completed using the Superpowers track system.

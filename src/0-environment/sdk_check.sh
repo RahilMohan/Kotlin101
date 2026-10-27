@@ -14,20 +14,20 @@ echo "--- Kotlin & Wear OS Environment Check ---"
 
 # Check Java
 JAVA_VERSION=$(java -version 2>&1 | awk -F '"' '/version/ {print $2}' | awk -F '.' '{print $1}')
-if [[ "$JAVA_VERSION" -ge 25 ]]; then
-    pass "Java $JAVA_VERSION detected (Min: 25)"
+if [[ "$JAVA_VERSION" -ge 21 ]]; then
+    pass "Java $JAVA_VERSION detected (Min: 21)"
 else
-    fail "Java $JAVA_VERSION detected (Min: 25 required)"
+    fail "Java $JAVA_VERSION detected (Min: 21 required)"
 fi
 
 # Check Kotlin
 KOTLIN_VERSION=$(kotlinc -version 2>&1 | awk '{print $3}' | awk -F '-' '{print $1}')
 KOTLIN_MAJOR=$(echo $KOTLIN_VERSION | awk -F '.' '{print $1}')
 KOTLIN_MINOR=$(echo $KOTLIN_VERSION | awk -F '.' '{print $2}')
-if [[ "$KOTLIN_MAJOR" -gt 2 ]] || [[ "$KOTLIN_MAJOR" -eq 2 && "$KOTLIN_MINOR" -ge 3 ]]; then
-    pass "Kotlin $KOTLIN_VERSION detected (Min: 2.3)"
+if [[ "$KOTLIN_MAJOR" -gt 2 ]] || [[ "$KOTLIN_MAJOR" -eq 2 && "$KOTLIN_MINOR" -ge 4 ]]; then
+    pass "Kotlin $KOTLIN_VERSION detected (Min: 2.4)"
 else
-    fail "Kotlin $KOTLIN_VERSION detected (Min: 2.3 required)"
+    fail "Kotlin $KOTLIN_VERSION detected (Min: 2.4 required)"
 fi
 
 # Check ADB
