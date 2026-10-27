@@ -4,15 +4,20 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
     name: Build All Projects
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,7 +27,6 @@ jobs:
         with:
           distribution: temurin
           java-version: '21'
-          cache: gradle
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
@@ -31,17 +35,30 @@ jobs:
 
       - name: Build all projects
         run: |
-          set -e
+          set -uo pipefail
+          failures=()
           for dir in src/*/; do
-            if [ -f "$dir/build.gradle.kts" ]; then
-              echo "Building $dir"
-              (cd "$dir" && ./gradlew build --no-daemon --console=plain --stacktrace) || {
-                echo "FAILED: $dir"
-                exit 1
-              }
+            [ -f "$dir/build.gradle.kts" ] || continue
+            echo "::group::Building $dir"
+            if (cd "$dir" && ./gradlew build --no-daemon --console=plain --stacktrace); then
+              echo "PASS: $dir"
+            else
+              echo "::error::Build failed for $dir"
+              failures+=("$dir")
             fi
+            echo "::endgroup::"
           done
-        timeout-minutes: 40
+
+          echo "=== BUILD SUMMARY ==="
+          echo "Total projects: $(find src -maxdepth 2 -name build.gradle.kts | wc -l)"
+          echo "Failed projects: ${#failures[@]}"
+          for f in "${failures[@]:-}"; do
+            [ -n "$f" ] && echo " - $f"
+          done
+
+          if [ "${#failures[@]}" -gt 0 ]; then
+            exit 1
+          fi
 
       - name: Upload build reports
         if: failure()
@@ -50,3 +67,4 @@ jobs:
           name: build-reports
           path: src/*/build/reports/
           retention-days: 7
+          if-no-files-found: ignore
