@@ -19,7 +19,7 @@ repositories {
 
 dependencies {
     implementation(compose.desktop.currentOs)
-    implementation("org.jetbrains.compose.material3:material3:1.12.0-alpha03")
+    implementation("org.jetbrains.compose.material3:material3:1.13.0-beta01")
     implementation("org.jetbrains.compose.foundation:foundation:1.12.2")
 
     implementation("io.ktor:ktor-client-core:3.6.0")

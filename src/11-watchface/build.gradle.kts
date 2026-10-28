@@ -18,7 +18,7 @@ repositories {
 
 dependencies {
     implementation(compose.desktop.currentOs)
-    implementation("org.jetbrains.compose.material3:material3:1.12.0-alpha03")
+    implementation("org.jetbrains.compose.material3:material3:1.13.0-beta01")
     implementation("org.jetbrains.compose.foundation:foundation:1.12.2")
     implementation("org.jetbrains.compose.ui:ui:1.12.2")
 
