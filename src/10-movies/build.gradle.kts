@@ -26,7 +26,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.12.0")
 
     // For Navigation in Compose Multiplatform - updated to RC
-    implementation("org.jetbrains.androidx.navigation:navigation-compose:2.10.0-rc01")
+    implementation("org.jetbrains.androidx.navigation:navigation-compose:2.10.0")
 
     testImplementation(kotlin("test"))
 }
