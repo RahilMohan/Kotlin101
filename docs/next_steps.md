@@ -25,8 +25,9 @@
 18. [x] `main` branch protection applied and verified (force-push, direct push, delete all rejected)
 19. [x] Actions pinned to commit SHAs at latest majors; runner pinned to `ubuntu-24.04`
 20. [x] Dependabot covers `src/*` Gradle builds and GitHub Actions
-21. [ ] Decide whether Wear OS projects (11–15) need an Android SDK step in CI
-22. [ ] Decide whether `src/0-environment` shell check should run in CI (needs Android SDK on the runner)
+21. [ ] Spot-check Compose UIs in projects 6–15 after the material3 alpha03 → beta01 bump (compiles; runtime look untested)
+22. [ ] Decide whether Wear OS projects (11–15) need an Android SDK step in CI
+23. [ ] Decide whether `src/0-environment` shell check should run in CI (needs Android SDK on the runner)
 
 ---
 **🎉 Curriculum Completed 🎉**
