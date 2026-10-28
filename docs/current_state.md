@@ -12,7 +12,7 @@
 
 ## Runtime Stack
 - Kotlin 2.4.21 (all 15 projects)
-- Compose Multiplatform 1.12.2
+- Compose Multiplatform 1.12.2 (material3 1.13.0-beta01, navigation-compose 2.10.0)
 - Ktor 3.6.0
 - kotlinx.coroutines 1.11.0
 - kotlinx.serialization 1.12.0

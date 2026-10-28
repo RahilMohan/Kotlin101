@@ -10,8 +10,8 @@ the GitHub-infrastructure modernization.
 
 ## Current status
 
-In progress — full test suite is being re-run locally and on CI after the
-GitHub Actions major-version bump.
+Done. All dependency and CI work is merged; `main` is green at `0048a34`
+with no open PRs.
 
 ## What changed
 
@@ -52,8 +52,8 @@ GitHub Actions major-version bump.
 
 ## Next recommended step
 
-Confirm `Build All Projects` is green on `main` at the bump commit, then close
-Dependabot PR #3 (superseded) if GitHub has not already.
+Launch the Compose desktop projects (6-10) and eyeball the UI: `material3`
+moved alpha03 -> beta01 and only compilation was verified.
 
 ## Files to inspect next
 
