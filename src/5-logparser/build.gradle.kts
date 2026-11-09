@@ -14,7 +14,7 @@ repositories {
 
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0")
-    implementation("com.github.ajalt.mordant:mordant:3.1.0")
+    implementation("com.github.ajalt.mordant:mordant:3.1.1")
     testImplementation(kotlin("test"))
 }
 
