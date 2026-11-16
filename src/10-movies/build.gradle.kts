@@ -23,7 +23,7 @@ dependencies {
     implementation("org.jetbrains.compose.foundation:foundation:1.12.2")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.12.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.13.0")
 
     // For Navigation in Compose Multiplatform - updated to RC
     implementation("org.jetbrains.androidx.navigation:navigation-compose:2.10.0")
