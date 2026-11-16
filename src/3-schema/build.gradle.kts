@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("reflect"))
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.12.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.13.0")
     implementation("com.github.ajalt.mordant:mordant:3.1.0")
     testImplementation(kotlin("test"))
 }
